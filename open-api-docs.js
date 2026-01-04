@@ -1,4 +1,7 @@
-﻿window.apiDocs = {
+﻿// don't forget to also make change to HTML after updating JS
+// because Github pages deployment only update changed file
+// (and it may also implemented cache so our new JS will not be loaded)
+window.apiDocs = {
   "openapi": "3.0.0",
   "info": {
     "title": "Find Roommate API",
@@ -2064,7 +2067,7 @@
             }
           },
           "403": {
-            "description": "Forbidden because the customer profile to be edited is not the user's customer profile",
+            "description": "Forbidden",
             "headers": {
               "Host": {
                 "schema": {
@@ -2238,6 +2241,164 @@
                 },
                 "example": {
                   "message": "Image storage failed"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lodgings": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "get lodgings",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Host": {
+                "schema": {
+                  "type": "number",
+                  "example": "127.0.0.1:8000"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "close"
+                }
+              },
+              "X-Powered-By": {
+                "schema": {
+                  "type": "number",
+                  "example": "PHP/8.3.13"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "no-cache, private"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 04 Jan 2026 11:39:34 GMT"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "lodgings": [
+                    {
+                      "id": 1,
+                      "name": "Medhurst's Lodging",
+                      "latitude": -22.478403,
+                      "longitude": -86.460482,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Cole's Lodging",
+                      "latitude": 15.068852,
+                      "longitude": 145.127776,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 3,
+                      "name": "Trantow's Lodging",
+                      "latitude": 69.32966,
+                      "longitude": -87.221137,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 4,
+                      "name": "Stamm's Lodging",
+                      "latitude": 12.479091,
+                      "longitude": -170.581998,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 5,
+                      "name": "Roob's Lodging",
+                      "latitude": 12.457168,
+                      "longitude": -36.351709,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 6,
+                      "name": "Nienow's Lodging",
+                      "latitude": 87.004357,
+                      "longitude": -104.856337,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 7,
+                      "name": "Aufderhar's Lodging",
+                      "latitude": 24.043825,
+                      "longitude": 48.751266,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 8,
+                      "name": "Lebsack's Lodging",
+                      "latitude": -1.341842,
+                      "longitude": 129.854278,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 9,
+                      "name": "Trantow's Lodging",
+                      "latitude": -80.251201,
+                      "longitude": 78.147242,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    },
+                    {
+                      "id": 10,
+                      "name": "Schoen's Lodging",
+                      "latitude": 12.153495,
+                      "longitude": 32.341216,
+                      "created_at": "2025-12-27T12:35:15.000000Z",
+                      "updated_at": "2025-12-27T12:35:15.000000Z"
+                    }
+                  ]
                 }
               }
             }
